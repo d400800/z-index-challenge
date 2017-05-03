@@ -64,18 +64,18 @@ longLine.style.width = (wrapperLeft - shortLineRight + 30)+"px";
 // clicking on the launch button
 let launcher = document.getElementById("launcher");
 launcher.addEventListener('click', function() {
-	//toggleClass(rings, "show")
+	toggleClass(rings, "show")
 
-	// setTimeout(function() {
-	// 	toggleClass(rings, "show")
-	// 	toggleClass(shoppingCart, "show")
-	// }, 1750)
+	setTimeout(function() {
+		toggleClass(rings, "show")
+		toggleClass(shoppingCart, "show")
+	}, 1750)
 
-	// setTimeout(function() {
+	setTimeout(function() {
 		toggleClass(skeleton, "draw")
 		setTimeout(function() {
 
-			toggleClass(shoppingCart, "show")
+			//toggleClass(shoppingCart, "show")
 			toggle_class(windowElements, "show")
 			toggleClass(sliders.dressSlider, "show")
 			toggleClass(dressWindow.icon, "place")
@@ -87,7 +87,7 @@ launcher.addEventListener('click', function() {
 			}, 1000)
 
 		}, 600)
-	// }, 1900)
+	}, 1900)
 
 })
 
