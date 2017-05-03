@@ -1,0 +1,42 @@
+.circle-icon {
+	&.size {
+		&.small {
+			transition-delay: .3s;
+			i {
+				@include css3-prefix(transform, rotate(-150deg))
+			}
+			&.move {
+				@include css3-prefix(transform, rotate($rotate-four - ($rotateStep * 3)));
+			}
+		}
+		&.medium {
+			transition-delay: .2s;
+			i {
+				@include css3-prefix(transform, rotate(-172deg))
+			}
+			&.move {
+				@include css3-prefix(transform, rotate($rotate-four - ($rotateStep * 2)));
+			}
+		}
+		&.large {
+			transition-delay: .1s;
+			i {
+				@include css3-prefix(transform, rotate(170deg))
+			}
+			&.move {
+				@include css3-prefix(transform, rotate($rotate-four - $rotateStep));
+			}
+		}
+		&.extra-large {
+			i {
+				@include css3-prefix(transform, rotate(153deg))
+			}
+			&.move {
+				@include css3-prefix(transform, rotate($rotate-four));
+			}
+		}
+		i {
+			font-style: normal;
+		}
+	}
+}

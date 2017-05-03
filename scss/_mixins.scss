@@ -1,0 +1,27 @@
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+   -khtml-#{$property}: #{$value};
+     -moz-#{$property}: #{$value};
+      -ms-#{$property}: #{$value};
+       -o-#{$property}: #{$value};
+          #{$property}: #{$value};
+}
+
+@mixin webkit-prefix($property, $value) {
+	-webkit-#{$property}: #{$value};
+			#{$property}: #{$value};
+}
+
+$iconSize: 64px;
+
+$rotate-four: 208deg;
+$rotate-three: 200deg;
+$rotateStep: 18deg;
+
+$window-size: 500px;
+
+/* colours */
+$white:	#f2eada;
+$red:	#c0392b;
+$blue:	#2c3e50;
+$main:	#1abc9c; 

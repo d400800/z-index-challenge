@@ -1,0 +1,30 @@
+.circle-icon {
+	&.colour {
+		&.blue {
+			&:before {
+				background-color: $blue;
+			}
+			&.move {
+				@include css3-prefix(transform, rotate($rotate-three));
+			}
+		}
+		&.red {
+			transition-delay: .1s;
+			&:before {
+				background-color: $red;
+			}
+			&.move {
+				@include css3-prefix(transform, rotate($rotate-three - $rotateStep));
+			}
+		}
+		&.white {
+			transition-delay: .2s;
+			&:before {
+				background-color: $white;
+			}
+			&.move {
+				@include css3-prefix(transform, rotate($rotate-three - ($rotateStep * 2)));
+			}
+		}
+	}
+}

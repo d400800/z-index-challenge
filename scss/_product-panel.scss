@@ -1,0 +1,123 @@
+#clothes-icons-container {
+	z-index: 998;
+	position: absolute;
+	transition: all cubic-bezier(.6,.6,.25,1.2) .75s;
+}
+.circle-icon {
+	left: 0;
+	color: transparent;
+	width: $iconSize;
+	height: $iconSize;
+	text-align: center;
+	position: absolute;
+	border-radius: 100%;
+	display: inline-block;
+	line-height: $iconSize;
+	transition: all cubic-bezier(.6,.6,.25,1.2) .75s;
+	background-color: $main;
+	&.menu {
+		top: 50%;
+		width: 10px;
+		height: 10px;
+		z-index: 999;
+		@include css3-prefix(transform-origin, 205px center);
+		@include css3-prefix(transform, translate(-50%, -50%) rotate(160deg));
+		&.place {
+			width: $iconSize;
+			height: $iconSize;
+			@include css3-prefix(transform-origin, 225px center);
+			@include css3-prefix(transform, translate(-50%, -50%) rotate(0deg));
+		}
+	}
+	&.clothes {
+		top: 100%;
+		left: 50%;
+		width: 10px;
+		height: 10px;
+		@include css3-prefix(transform-origin, center -205px);
+		@include css3-prefix(transform, translate(-50%, -50%) rotate(90deg));
+		i {
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			@include css3-prefix(transform, translate(-50%, -50%) rotate(0deg))
+		}
+		&.place {
+			color: white;
+			width: $iconSize;
+			height: $iconSize;
+			@include css3-prefix(transform-origin, center -168px);
+		}
+		&.dresses {
+			&.place {
+				transition-delay: .2s;
+				@include css3-prefix(transform, translate(-50%, -50%) rotate(0deg));
+			}
+		}
+		&.shoes {
+			&.place {
+				transition-delay: .1s;
+				@include css3-prefix(transform, translate(-50%, -50%) rotate(-30deg));
+			}
+		}
+		&.accessories {
+			&.place {
+				@include css3-prefix(transform, translate(-50%, -50%) rotate(-60deg));
+			}
+		}
+		&:after {
+			top: 50%;
+			left: 50%;
+			content: "";
+			display: none;
+			position: absolute;
+			width: $iconSize + 8px;
+			height : $iconSize + 8px;
+			border: 1px solid #fafafa;
+			@include css3-prefix(border-radius, 100%);
+			@include css3-prefix(transform, translate(-50%, -50%));
+		}
+		&.toggled {
+			&:after {
+				display: block;
+			}
+		}
+	}
+	&.size {
+		z-index: 1;
+    	top: 170px;
+		width: 0px;
+		height: 0px;
+		transition: all ease .75s;
+		@include css3-prefix(transform-origin, 170px center);
+		&.small {
+			transition-delay: .3s;
+			&.move {
+				@include css3-prefix(transform, rotate($lastRotate - 75deg));
+			}
+		}
+		&.medium {
+			transition-delay: .2s;
+			&.move {
+				@include css3-prefix(transform, rotate($lastRotate - 50deg));
+			}
+		}
+		&.large {
+			transition-delay: .1s;
+			&.move {
+				@include css3-prefix(transform, rotate($lastRotate - 25deg));
+			}
+		}
+		&.extra-large {
+			&.move {
+				@include css3-prefix(transform, rotate($lastRotate));
+			}
+		}
+		&.move {
+			left: -20px;
+			width: $iconSize;
+			height: $iconSize;
+			@include css3-prefix(transform-origin, 225px center);
+		}
+	}
+}

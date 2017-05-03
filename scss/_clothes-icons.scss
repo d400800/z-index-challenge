@@ -1,0 +1,101 @@
+#clothes-icons-container {
+	z-index: -1;
+	position: absolute;
+	transition: all cubic-bezier(.6,.6,.25,1.2) .75s;
+	&.show {
+		z-index: 998;
+		.circle-icon {
+			&.clothes {
+				i {
+					font-size: 1.5rem;
+				}
+				&.shoes {
+					i {
+						@include css3-prefix(transform, translate(-50%, -50%) rotate(30deg))
+					}
+				}
+				&.accessories {
+					i {
+						@include css3-prefix(transform, translate(-50%, -50%) rotate(60deg))
+					}
+				}
+			}
+		}
+	}
+}
+
+.circle-icon {
+	&.clothes {
+		width: 0;
+		top: 100%;
+		left: 50%;
+		height: 0;
+		z-index: 1;
+		@include css3-prefix(transform-origin, center -205px);
+		@include css3-prefix(transform, translate(-50%, -50%) rotate(90deg));
+		&.place {
+			color: white;
+			width: $iconSize;
+			height: $iconSize;
+			@include css3-prefix(transform-origin, center -210px);
+			&.fade-out {
+				width: 0;
+				height: 0;
+				transition: all cubic-bezier(0.6, 0.6, 0.25, 1) 0.35s;
+				&:before {
+					width: 0;
+					height: 0;
+					transition: all cubic-bezier(0.6, 0.6, 0.25, 1) 0.35s;
+				}
+			}
+		}
+		&.dresses {
+			&.place {
+				transition-delay: .2s;
+				@include css3-prefix(transform, translate(-50%, -50%) rotate(0deg));
+				&.fade-out {
+					transition-delay: 0s;
+				}
+			}
+		}
+		&.shoes {
+			&.place {
+				transition-delay: .1s;
+				@include css3-prefix(transform, translate(-50%, -50%) rotate(-20.6deg));
+				img {
+					transform: translate(-50%, -50%) rotate(20deg);
+				}
+				&.fade-out {
+					transition-delay: 0s;
+				}
+			}
+		}
+		&.accessories {
+			&.place {
+				@include css3-prefix(transform, translate(-48%, -47.5%) rotate(-41.2deg));
+				img {
+					transform: translate(-50%, -50%) rotate(40deg);
+				}
+			}
+			&.fade-out {
+				transition-delay: 0s;
+			}
+		}
+	}
+}
+
+.clothes-icon-halo {
+	bottom: 0;
+	left: 50%;
+	z-index: 2;
+	width: 72px;
+	height: 72px;
+	position: absolute;
+	display: inline-block;
+	border: 1px solid white;
+	@include css3-prefix(border-radius, 100%);
+	@include css3-prefix(transform, translate(-50%, 50%));
+	&.hide {
+		display: none;
+	}
+}

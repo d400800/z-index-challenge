@@ -1,0 +1,202 @@
+#launcher {
+	top: 5%;
+	left: 5%;
+	width: 124px;
+    height: 42px;
+    border: none;
+    font-size: 1rem;
+    line-height: 42px;
+	position: absolute;
+    background-color: #fafafa;
+}
+
+#wrapper {
+	width: $window-size + 4px;
+	height: $window-size + 4px;
+}
+
+#rings {
+	left: 5%;
+	bottom: 30%;
+	width: 140px;
+	height: 140px;
+	position: absolute;
+	span {
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+		display: inline-block;
+		@include css3-prefix(border-radius, 100%);
+		&:nth-of-type(1) {
+			border: 1px solid white;
+		}
+		&:nth-of-type(2) {
+			border: 2px solid white;
+		}
+	}
+	&.show {
+		span {
+			opacity: 1;
+			visibility: visible;
+			&:nth-of-type(1) {
+			animation: bigRing 1s ease forwards;
+			}
+			&:nth-of-type(2) {
+				animation: smallRing .75s ease .25s forwards;
+			}
+		}
+		.short-line {
+			&:before {
+				animation: smallLine .5s ease .5s;
+			}
+		}
+		.long-line {
+			&:before {
+				animation: longLine 1.25s 0.95s;
+			}
+		}
+	}
+	&.test {
+		.short-line {
+			&:before {
+				width: 100%;
+				opacity: 1;
+			}
+		}
+		span {
+			opacity: 1;
+			visibility: visible;
+			&:nth-of-type(1) {
+				width: 100%;
+				height: 100%;
+			}
+			&:nth-of-type(2) {
+				width: 65%;
+				height: 65%;
+			}
+		}
+	}
+	.short-line {
+		top: 15%;
+	    left: 50%;
+	    height: 24px;
+	    width: 80px;
+	    position: absolute;
+	    @include css3-prefix(transform, rotate(-45deg));
+	}
+	.long-line {
+	    width: 0;
+	    height: 2px;
+	    top: -4px;
+	    left: 130px;
+		position: absolute;
+	}
+	.short-line, .long-line {
+		&:before {
+	    	top: 0;
+	    	left: 0;
+	    	width: 0;
+	    	height: 2px;
+	    	content: "";
+	    	position: absolute;
+	    	display: inline-block;
+	    	background-color: white;
+	    }
+	}
+}
+.wrapper {
+  top: 55%;
+  left: 70%;
+  z-index: 2;
+  width: $window-size;
+  height: $window-size;
+  position: absolute;
+  box-sizing: border-box;
+  @include css3-prefix(transform, translate(-50%, -50%));
+
+  &.hide {
+  	display: none;
+  }
+  
+  svg {
+    width: $window-size + 2px;
+    height: $window-size + 2px;
+	circle {
+	    stroke: #eaeaea;
+	    fill: transparent;
+	    stroke-width: 1px;
+		stroke-dasharray: 1570px;
+	    @include webkit-prefix(transition, all ease 1.25s);
+	    @include css3-prefix(transform, rotate(180deg));
+	    @include css3-prefix(transform-origin, center center);
+	    &:nth-of-type(1) {
+		    stroke-dashoffset: 1570px;
+	    }
+	    &:nth-of-type(2) {
+		    stroke-dashoffset: -1570px;
+	    }
+	}
+    &.draw {
+		circle {
+			&:nth-of-type(1) {
+		    	stroke-dashoffset: 490px;
+			}
+			&:nth-of-type(2) {
+		    	stroke-dashoffset: -1080px;
+				
+			}
+		}
+    }
+  }
+}
+
+
+@keyframes bigRing {
+	0% {
+		width: 0;
+		height: 0;
+	}
+	90% {
+		width: 100%;
+		height: 100%;
+	}
+    100% {
+    	opacity: 0;
+    	visibility: hidden;
+    }
+}
+@keyframes smallRing {
+	0% {
+		width: 0;
+		height: 0;
+	}
+	90% {
+		width: 65%;
+		height: 65%;
+	}
+    100% {
+    	opacity: 0;
+    	visibility: hidden;
+    }
+}
+@keyframes smallLine {
+	99% {
+		width: 100%;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes longLine {
+	15% {
+		width: 80px;
+	}
+	85% {
+		// left: calc(100% - 80px);
+		left: 100%;
+	}
+	100% {
+		width: 0;
+	}
+}

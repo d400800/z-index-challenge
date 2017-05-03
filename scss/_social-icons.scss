@@ -1,0 +1,30 @@
+.circle-icon {
+	&.social {
+		&.gplus {
+			img {
+				@include css3-prefix(transform, translate(-50%, -50%) rotate(-200deg))
+			}
+			&.move {
+				@include css3-prefix(transform, rotate($rotate-three));
+			}
+		}
+		&.twitter {
+			transition-delay: .1s;
+			img {
+				@include css3-prefix(transform, translate(-50%, -50%) rotate(-180deg))
+			}
+			&.move {
+				@include css3-prefix(transform, rotate($rotate-three - $rotateStep));
+			}
+		}
+		&.facebook {
+			transition-delay: .2s;
+			img {
+				@include css3-prefix(transform, translate(-50%, -50%) rotate(200deg))
+			}
+			&.move {
+				@include css3-prefix(transform, rotate($rotate-three - ($rotateStep * 2)));
+			}
+		}
+	}
+}

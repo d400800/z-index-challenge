@@ -1,0 +1,94 @@
+.circle-icon {
+	&.menu {
+		&.active {
+			z-index: 9999;
+			display: inline-block;
+		}
+		top: 50%;
+		width: 10px;
+		height: 10px;
+		display: none; 
+		@include css3-prefix(transform-origin, 245px center);
+		@include css3-prefix(transform, translate(-50%, -50%) rotate(160deg));
+		&.place {
+			width: $iconSize;
+			height: $iconSize;
+			@include css3-prefix(transform-origin, 275px center);
+			@include css3-prefix(transform, translate(-50%, -50%) rotate(0deg));
+		}
+		&.hide {
+			&:before {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+		i {
+			width: 28px;
+			height: 4px;
+			display: block;
+			position: relative;
+			background-color: white;
+			&:after, &:before {
+				left: 0;
+				content: "";
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				background-color: white;
+			}
+			&:after {
+				top: 8px;
+			}
+			&:before {
+				top: -8px;
+			}
+		}
+	}
+}
+
+.menu-icons-container {
+	visibility: hidden;
+	opacity: 0;
+	z-index: 1000;
+	.circle-icon {
+		&.navigation {
+			top: 50%;
+			@include css3-prefix(transform-origin, 205px center);
+			@include css3-prefix(transform, translate(-50%, -50%) rotate(0deg));
+		}
+	}
+	&.show {
+		visibility: visible;
+		opacity: 1;
+		.circle-icon {
+			&.navigation {
+				&.select-color {
+					@include css3-prefix(transform, translate(-50%, -50%) rotate(13deg));
+					img {
+						@include css3-prefix(transform, translate(-50%, -50%) rotate(-10deg));
+					}
+				}
+				&.select-size {
+					left: -12px;
+					@include css3-prefix(transform, translate(-50%, -50%) rotate(40deg));
+					img {
+						@include css3-prefix(transform, translate(-50%, -50%) rotate(-40deg));
+					}
+				}
+				&.share { 
+					@include css3-prefix(transform, translate(-50%, -50%) rotate(-13deg));
+					img {
+						@include css3-prefix(transform, translate(-50%, -50%) rotate(10deg));
+					}
+				}
+				&.return {
+					left: -12px;
+					@include css3-prefix(transform, translate(-50%, -50%) rotate(-40deg));
+					img {
+						@include css3-prefix(transform, translate(-50%, -50%) rotate(35deg));
+					}
+				}
+			}
+		}
+	}
+}

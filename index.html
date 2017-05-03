@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>z-index challenge</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+	<button id="launcher">Launch</button>
+
+	<div id="rings">
+		<span class="absolute-center"></span>
+		<span class="absolute-center"></span>
+		<div class="short-line"></div>
+		<div class="long-line"></div>
+	</div>
+
+	<div id="wrapper" class="wrapper">
+		<svg id="menu-skeleton" class="absolute-center">
+	    	<circle cx="251" cy="251" r="248"></circle>
+	    	<circle cx="251" cy="251" r="248"></circle>
+		</svg>
+	</div>
+
+	<div id="shopping-cart">
+		<img class="absolute-center" src="images/icons/cart.png" alt="shopping cart icon">
+		<span id="cart-counter">1</span>
+	</div>
+
+	<main id="main" class="absolute-center">
+		
+		<div id="cart-btn"></div>
+
+		<div class="product-title">
+			<p>dress title</p>
+			<p>$299.00</p>
+		</div>
+
+		<span class="clothes-icon-halo hide"></span>
+		
+		<section id="clothes-icons-container" class="main-window">
+			<span class="circle-icon clothes dresses toggled" data="dress-window" data-title="dress title" data-price="$299.00">
+				<img class="absolute-center" src="images/icons/dress.png" alt="dress icon">
+			</span>
+			<span class="circle-icon clothes shoes" data="shoes-window" data-title="shoes title" data-price="$199.00">
+				<img class="absolute-center" src="images/icons/shoe.png" alt="shoe icon">
+			</span>
+			<span class="circle-icon clothes accessories" data="accessories-window">
+				<img class="absolute-center" src="images/icons/necklace.png" alt="necklace icon">
+			</span>	
+		</section>
+
+		<!-- SLIDERS NAVIGATION: START -->
+			<!-- DRESS -->
+			<ul id="dress-slider-navigation" class="slider-navigation absolute-center show" data="dress-window">
+				<li><a href="#0" class="next">Next</a></li>
+				<li><a href="#0" class="prev">Prev</a></li>
+			</ul>
+			<!-- SHOES -->
+			<ul id="shoes-slider-navigation" class="slider-navigation absolute-center" data="shoes-window">
+				<li><a href="#0" class="next">Next</a></li>
+				<li><a href="#0" class="prev">Prev</a></li>
+			</ul>
+		<!-- SLIDERS NAVIGATION: END -->
+		
+		<span id="dress-menu-icon" class="circle-icon menu active" data="dress-window">
+			<i class="absolute-center"></i>
+		</span>
+		<span id="shoes-menu-icon" class="circle-icon menu place" data="shoes-window">
+			<i class="absolute-center"></i>
+		</span>
+
+		<section id="dress-window" class="main-window product-window active">	
+
+			<section id="dress-menu" class="main-window menu-icons-container">
+				<span class="circle-icon navigation select-color" data="colour">
+					<img class="absolute-center" src="images/icons/colours.png" alt="colours icon">
+				</span>
+				<span class="circle-icon navigation select-size toggled" data="size">
+					<img class="absolute-center" src="images/icons/size.png" alt="size icon">
+				</span>
+				<span class="circle-icon navigation share" data="social">
+					<img class="absolute-center" src="images/icons/share.png" alt="share icon">
+				</span>
+				<span class="circle-icon navigation return">
+					<img class="absolute-center" src="images/icons/back.png" alt="back icon">
+				</span>
+				
+				<span class="option circle-icon size small"><i>S</i></span>
+				<span class="option circle-icon size medium"><i>M</i></span>
+				<span class="option circle-icon size large"><i>L</i></span>
+				<span class="option circle-icon size extra-large"><i>XL</i></span>
+
+				<span class="option circle-icon colour blue"></span>
+				<span class="option circle-icon colour red"></span>
+				<span class="option circle-icon colour white"></span>
+
+				<span class="option circle-icon social facebook">
+					<img class="absolute-center" src="images/icons/facebook.png" alt="facebook icon">
+				</span>
+				<span class="option circle-icon social twitter">
+					<img class="absolute-center" src="images/icons/twitter.png" alt="twitter icon">
+				</span>
+				<span class="option circle-icon social gplus">
+					<img class="absolute-center" src="images/icons/google.png" alt="google icon">
+				</span>
+			</section>
+
+			<!-- DRESS SLIDER: START -->
+			<section id="slider-dress" data="dress-window" class="main-window product-slider">
+				<ul class="slides">
+					<li class="selected"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div class="cart-btn-visual"><span>ADD TO CART</span></div>
+			</section>
+			<!-- DRESS SLIDER: END -->
+			
+		</section>
+		
+
+		<section id="shoes-window" class="main-window product-window">
+
+			<section id="shoes-menu" class="main-window menu-icons-container">
+				<span class="circle-icon navigation select-color" data="colour"><i>C</i></span>
+				<span class="circle-icon navigation select-size toggled" data="size"><i>S</i></span>
+				<span class="circle-icon navigation share" data="social"><i>S</i></span>
+				<span class="circle-icon navigation return"><i>B</i></span>
+				
+				<span class="option circle-icon size small"><i>S</i></span>
+				<span class="option circle-icon size medium"><i>M</i></span>
+				<span class="option circle-icon size large"><i>L</i></span>
+				<span class="option circle-icon size extra-large"><i>XL</i></span>
+
+				<span class="option circle-icon colour blue"></span>
+				<span class="option circle-icon colour red"></span>
+				<span class="option circle-icon colour white"></span>
+
+				<span class="option circle-icon social facebook"><i>F</i></span>
+				<span class="option circle-icon social twitter"><i>T</i></span>
+				<span class="option circle-icon social gplus"><i>G+</i></span>
+			</section>
+
+			<!-- SHOES SLIDER: START -->
+			<section id="slider-shoes" data="shoes-window" class="main-window product-slider">
+				<ul class="slides">
+					<li class="selected"></li>
+				</ul>
+				<div class="cart-btn-visual">ADD TO CART</div>
+			</section>
+			<!-- SHOES SLIDER: END -->
+			
+		</section>
+
+	</main>
+	
+<script src="functions.js"></script>
+<script src="product-window-object.js"></script>
+<script src="circular.js"></script>
+<script src="slider.js"></script>
+
+</body>
+</html>
